@@ -1,5 +1,6 @@
 name: Build & deploy NBA-Go app
 
+# Bij elke push op master branch gaat file uitgevoerd worden
 on:
   push: 
     branches:
@@ -34,3 +35,15 @@ jobs:
           context: .
           push: true
           tags: dionap/nba-go:latest
+
+  gen-sbom:
+    name: Generate SBOM
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: advanced-security/generate-sbom-action@v1
+      id: gensbom
+    - uses: actions/upload-artifact@v3
+      with:
+        name: sbom
+        path: sbom.json

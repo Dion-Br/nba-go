@@ -11,11 +11,14 @@ jobs:
     name: Build and deploy NBA-Go app
     runs-on: ubuntu-latest
     steps:
+      # Code binnenhalen
       - name: Checkout code
         uses: actions/checkout@v3
       
-      #- name: Code test
+      #- name: Code testing
+      # Moeilijk om JavaScript code te controleren met een action
 
+      # Docker image maken en op Docker Hub plaatsen
       - name: Build Docker image
         uses: docker/build-push-action@v2
         with: 
@@ -36,6 +39,7 @@ jobs:
           push: true
           tags: dionap/nba-go:latest
 
+  # Software Bill Of Materials automatisch genereren
   gen-sbom:
     name: Generate SBOM
     runs-on: ubuntu-latest
@@ -46,4 +50,4 @@ jobs:
     - uses: actions/upload-artifact@v3
       with:
         name: sbom
-        path: sbom.json
+        path: ${{ steps.gensbom.outputs.fileName }}

@@ -42,7 +42,7 @@ jobs:
       - name: Scan for vulnerabilities
         uses: crazy-max/ghaction-container-scan@v3
         with:
-          image: dionap/nab-go:latest
+          image: dionap/nba-go:latest
 
   # Software Bill Of Materials automatisch genereren 
   gen-sbom:
@@ -67,3 +67,5 @@ jobs:
       uses: jhutchings1/spdx-to-dependency-graph-action@v0.0.2
       with:
         filePath: "_manifest/spdx_2.2/"
+
+        

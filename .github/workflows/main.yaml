@@ -39,6 +39,11 @@ jobs:
           push: true
           tags: dionap/nba-go:latest
 
+      - name: Scan for vulnerabilities
+        uses: crazy-max/ghaction-container-scan@v3
+        with:
+          image: dionap/nab-go:latest
+
   # Software Bill Of Materials automatisch genereren 
   gen-sbom:
     runs-on: ubuntu-latest

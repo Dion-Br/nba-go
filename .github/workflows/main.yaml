@@ -39,7 +39,7 @@ jobs:
           push: true
           tags: dionap/nba-go:latest
 
-  # Software Bill Of Materials automatisch genereren
+  # Software Bill Of Materials automatisch genereren 
   gen-sbom:
     runs-on: ubuntu-latest
     permissions: 

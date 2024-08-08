@@ -1,4 +1,4 @@
-name: Build & deploy NBA-Go app
+name: Build & deploy NBA-Go app 
 
 # Bij elke push op master branch gaat file uitgevoerd worden
 on:

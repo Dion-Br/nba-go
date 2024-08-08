@@ -15,8 +15,8 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
       
-      #- name: Code testing
-      # Moeilijk om JavaScript code te controleren met een action
+      - name: SAST Code testing
+        uses: stefanoeb/eslint-action@1.0.2
 
       # Docker image maken en op Docker Hub plaatsen
       - name: Build Docker image
